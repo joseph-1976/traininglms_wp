@@ -1,0 +1,19 @@
+<?php /* Client side template for lesson topic */ ?>
+<script type="text/html" id="tmpl-syllabus-lesson-topic">
+<li class="dashicons-before <%
+	switch(topic.content_type) {
+		case 'Html': print("dashicons-media-code"); break; 
+		case 'Video': print("dashicons-media-video"); break;
+						default: print("dashicons-media-default");
+					} 
+					%>" data-id="<%= topic.ID %>"><span class="topic-title"><%- topic.title != '' ? topic.title : 'Untitled' %></span>
+	<span class="icon-header-menu">
+		<div class="accordion-menu-icon" title="edit" data-action="edit">
+			<span class="ui-icon ui-icon-pencil"></span>
+		</div>
+		<div class="accordion-menu-icon" title="delete" data-action="delete">
+			<span class="ui-icon ui-icon-trash"></span>
+		</div>
+	</span>
+</li>
+</script>

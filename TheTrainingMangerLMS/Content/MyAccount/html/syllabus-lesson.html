@@ -1,0 +1,50 @@
+<?php /* Client side template for lesson accordion */ ?>
+<script type="text/html" id="tmpl-syllabus-lesson">
+<div class="syllabus-lesson" data-id="<%= lesson.ID %>">
+	<h3><span class="lesson-title"><%- lesson.title != '' ? lesson.title : 'Untitled' %></span>
+		<span class="icon-header-menu">
+			<div class="accordion-menu-icon" title="edit" data-action="edit">
+				<span class="ui-icon ui-icon-pencil"></span>
+			</div>
+			<div class="accordion-menu-icon" title="add topic" data-action="add-topic">
+				<span class="ui-icon ui-icon-plus"></span>
+			</div>
+			<div class="accordion-menu-icon" title="view" data-action="view">
+				<span class="ui-icon ui-icon-search"></span>
+			</div>
+			<div class="accordion-menu-icon" title="delete" data-action="delete">
+				<span class="ui-icon ui-icon-trash"></span>
+			</div>
+		</span>
+	</h3>
+	<div class="syllabus-lesson-topics">
+<%
+	var topics = lesson.topics;
+%>
+		<ul>
+<%
+	if (topics.length) {
+		topics.forEach(function(topic) {
+%>
+			<li data-id="<%= topic.ID %>"><span class="topic-title"<%- topic.title != '' ? topic.title : 'Untitled' %></span>
+				<span class="icon-header-menu">
+					<div class="accordion-menu-icon" title="Edit Topic" data-action="edit">
+						<span class="ui-icon ui-icon-pencil"></span>
+					</div>
+					<div class="accordion-menu-icon" title="Delete Topic" data-action="delete">
+						<span class="ui-icon ui-icon-trash"></span>
+					</div>
+				</span>
+			</li>
+<%
+		}); /* topics */
+	} else {
+%>
+		<div class="no-topics">No topics have been added.</div>
+<%
+	}
+%>
+		</ul>
+	</div>
+</div>
+</script>

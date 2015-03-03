@@ -1,0 +1,117 @@
+Quiz
+
+options
+Questions
+
+Quiz\Question
+static $answerTypes = array( );
+static getAnswerTypes();
+	title
+	type
+	text
+	Points
+	Category(ID)
+	Answer:(s)
+	Feedback
+	Hint(?)
+
+Options alone verses Options and Display Components  The latter should go under Admin/Quiz/Options
+Quiz\Options {
+$fields = array(
+	'number_of_questions' => array('label' => "Number of Questions", 'default' => 0,
+		'description' => "The number of questions that will be given to user.  Use 0 for all."),
+	'time_limit' => array('label' => 'Time Limit (seconds)', 'default' => 0,
+		'description' => "Amount of time the user has to take the test.  Use 0 for no limit."),
+	'allowed_repeats' => array('label' => "Allowed User Repeats", 'default' => 0,
+		'description' => "Number of times the user is allowed to repeat the test."),
+	'pass_percentage' => array('label' => "Passing Percentge", 'default' => 50,
+		'description' => "Percentage of points requierd for the user to pass this quiz."),
+//	'score_levels' =>
+	// delivery [mode] options
+	'provide_feedback' => array('label' => "Proivide Feedback", 'default' => 'true', 'input_type' => 'checkbox',
+		'description' => "Provide feedback to the user if the user misses the question.");
+	'immediate_feedback' => array('label' => "Immediate Feedback",  'default' => 'false',
+		'description' => "Should feedback be provided immediately after the question or the end of the quiz."),
+	'allow_back_button' => array('label' => "Allow Back Button", 'default' => 'false',
+		'description' => "Show and allow user to use the back button to resubmit the question."),
+	'all_questions_one_page' => array('label' => "All Questions" 'default' => 'false',
+		'description' => "Show all questions on one page."),
+	// reporting options
+	'send_instructor_email' => array('label' => "Send Instructor Email", 'default' => 'true',
+		'description' => "Send the instructor an email report on quiz completion."),
+	'send_user_email' => array('label' => "Send User Email", 'default' => 'true',
+		'description' => "Send the user an email report on quiz completion."),
+);
+
+Question Options
+$fields = array(
+	'provide_feedback' => array('label' => "Proivide Feedback", 'default' => 'true', 'input_type' => 'checkbox',
+		'description' => "Provide feedback to the user if the user misses the question.");
+	'randomize_answers' => array('label' => "Randomize Answers", 'default' => 'true',
+		'description' => "Randomize multiple choice answers.")
+	'alphabetize_answers' => array('label' => "Alphabetize Answers", 'default' => 'true',
+		'description' => "Show letters beside multiple choice answers."),
+	'display_points' => array('label' => "Display Points", 'default' => 'true',
+		'description' => "Show the number of points with each question."),
+	'display_feedback' => ???
+	'display_category' => array('label' => "Show Category", 'default' => 'false',
+		'description' => "Show the associated category with each question."),
+);
+
+Reporting Options (was Result Options)
+Report Score
+Report Total Quiz Time
+Report Average Point Score?
+Report Category Score
+
+}
+
+SingleChoiceAnswer
+	disableRandomize (for A  B)
+	choices: (content, content_type, correct, points?)
+
+MultipleChoiceAnswer {
+	disableRandomize
+	array choices; (content, content_type, correct, points)
+	correct_choice(s)?
+}
+
+FreeChoiceAnswer {
+}
+
+SortingAnswer {
+	a b c d e
+	5 4 3 2 1
+	e abcd 9
+	b a c e d  3	
+}
+
+MatrixMatchingAnswer {}
+
+AssessmentAnswer {}
+
+KeywordAnswer {}
+
+Xfunction isCorrect(Answer, user_answer);
+interface:
+abstract function getTotalPossiblePoints() => store in question
+abstract function score[User]Answer($user_answer)
+
+		"SELECT IFNULL(SUM(q.meta_value), 0) AS total FROM $wpdb->postmeta q
+		WHERE q.meta_key = %s AND q.post_id IN (
+			SELECT u.meta_value AS q_id FROM $wpdb->usermeta u
+			WHERE u.user_id = %d AND u.meta_key = CONCAT(%s, u.meta_value)
+		)",
+
+// TODO: override create (but we need the post id)
+	//modify $fields with default or add to parameters or always do that
+	array_replace? (Options::defaults(), parameters['options'] in our override
+		have a synthesized function for create, perfect
+// I think we should add defaults to parameters not far into the create cycle.
+// I think adding defaults manually is also acceptable.
+	// options => new \TheTrainingMangerLMS\Quiz\Options($parameters->options : array());
+	// parent::create(...);?
+will need to override instance as well!, not unless we do synthesize, add delete and create maybe
+//we don't need persist and read for options
+
+recap: override create, array_replace(options) if present for all the options

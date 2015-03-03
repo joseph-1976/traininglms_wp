@@ -1,0 +1,6 @@
+<?php /* Client side template for course view */ ?>
+<script type="text/html" id="tmpl-course-view">
+<input type="hidden" name="ID" value="<%= course.ID %>">
+<h3><%- course.title != '' ? course.title : 'Untitled' %></h3>
+<input type="button" name="edit" value="Edit"/>
+</script>

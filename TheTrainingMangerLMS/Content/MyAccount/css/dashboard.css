@@ -1,0 +1,16 @@
+select.current-page {
+	height: 21px;
+	margin-top: -1px;
+}
+/*.table-nav-filter {
+	float: left;
+}*/
+p.search-box {
+	margin-top: 1px;
+}
+.widefat .table-filters th {
+	padding: 2px 4px;
+}
+.widefat .table-filters select {
+	width: 100%;
+}

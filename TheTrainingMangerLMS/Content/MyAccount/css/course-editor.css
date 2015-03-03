@@ -1,0 +1,9 @@
+label {
+    display: block;
+    padding-left: 0.1em;
+    font-size: larger;
+}
+.input-block {
+    padding-top: 0.25em;
+    padding-bottom: 1.75em;
+}

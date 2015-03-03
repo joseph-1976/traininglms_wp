@@ -1,0 +1,141 @@
+#ttp-lms-acb-container {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size:   14px;
+    font-weight: bold;
+}
+.ui-layout-pane { /* all 'panes' */
+    background: #FFF; 
+    border:     1px solid #BBB;
+    padding:    10px; 
+    overflow:   auto;
+}
+.ui-layout-pane-west {
+    padding:    0px;
+}
+.resizer-bar-west-icon {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  margin-top: -8px;
+  margin-left: -8px;
+  padding-bottom: 0px;
+  padding-top: 2px;
+}
+#ttp-lms-acb-tab {
+    box-sizing: border-box;
+    height: 100%;
+    border: 0px;
+    padding: 0px;
+}
+#ttp-lms-acb-tab > ul {
+    width: 100%;
+    white-space: nowrap;
+}
+#ttp-lms-acb-tab > ul > li {
+    width: 33.3%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+}
+#ttp-lms-acb-tab > ul > li > a {
+    width: 100%;
+    text-align: center;
+    display: inherit;
+    white-space: normal;
+    float: unset;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: smaller;
+    font-weight: bold;
+}
+#ttp-lms-acb-tab .ui-tabs-panel {
+    padding: 0px;
+}
+#syllabus {
+    padding: 0px;
+}
+#syllabus > .syllabus-lesson > h3 {
+    font-size: smaller;
+    font-weight: bold;
+}
+#insert-lesson {
+    padding: 5px 10px 5px 10px;
+}
+.ui-accordion-header {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#syllabus > .syllabus-lesson:not(.unassigned-topics) > .ui-accordion-header {
+    cursor: n-resize !important;
+}
+#syllabus > .syllabus-lesson > h3 {
+    /*padding-right: 66px;*/
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em;
+    margin-bottom: 0px;
+/*    font-weight: bold;
+    font-size: larger;*/
+}
+#syllabus > .syllabus-lesson > div {
+    padding: 0.5em;
+}
+#syllabus > .syllabus-lesson > div > ul {
+    margin: 0em;
+    min-height: 1.4em;
+}
+#syllabus > .syllabus-lesson > div > ul .no-topics {
+    padding-left: 8px;
+}
+#syllabus > .syllabus-lesson > div > ul > li {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+li.ui-state-hover {
+    border: 0px !important;
+    font-weight: bold !important;
+}
+.icon-header-menu {
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    margin-top: -8px;
+    display: none;
+}
+.accordion-menu-icon {
+    /*display: inline-block;*/
+    float: left;
+    cursor: pointer;
+}
+.accordion-menu-icon-hover {
+    border-radius: 4px;
+background: -moz-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(247,247,247,0) 100%); /* FF3.6+ */
+}
+
+.ui-accordion-header-icon {
+    cursor: pointer;
+}
+.ui-dialog .ui-resizable-se {
+    width: 14px;
+    height: 14px;
+    right: 3px;
+    bottom: 3px;
+    background-position: -80px -224px;
+}
+#dialog-add-lesson-selector-button {
+    float: right;
+}
+#dialog-add-lesson-content > .ui-layout-north {
+    overflow: hidden;
+}
+#edit-lesson label {
+    display: block;
+    padding-left: 0.1em;
+    font-size: larger;
+}
+#edit-lesson .input-block {
+    padding-top: 0.25em;
+    padding-bottom: 0.75em;
+}

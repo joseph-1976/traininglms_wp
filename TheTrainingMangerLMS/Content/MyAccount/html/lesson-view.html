@@ -1,0 +1,9 @@
+<?php /* Client side template for lesson view */ ?>
+<script type="text/html" id="tmpl-lesson-view">
+<input type="hidden" name="ID" value="<%= lesson.ID %>">
+<h3><%- lesson.title != '' ? lesson.title : 'Untitled' %></h3>
+
+<div><%= lesson.description %></div>
+
+<div><%= lesson.content %></div>
+</script>

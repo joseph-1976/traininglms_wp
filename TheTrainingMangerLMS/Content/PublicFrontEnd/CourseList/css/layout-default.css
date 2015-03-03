@@ -1,0 +1,246 @@
+
+#sidebar-container {
+    position: relative;
+    border: #BDBDBD 1px solid;
+    background-color: #F6F6F6;
+}
+
+#sidebar-left {
+    float: left;
+    width: 15%;
+    background-color: #F6F6F6;
+
+}
+#sidebar-left-bottom{display:none;}
+#sidebar-left-collapsed {
+    float: left;
+    position: relative;
+    padding: 5px;
+    width: 5%;
+    background-color: #F6F6F6;
+    display: none;
+}
+#sidebar-left .sidebar-left-menu-links-container h2 {
+    padding: 4px 0px 4px 4px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E2E2E2;
+}
+
+#sidebar-left .sidebar-left-menu-links-container ul {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+#sidebar-container .collapse-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 13%;
+    padding: 5px;
+    background-color: #F6F6F6;
+    font-size: 12px;
+    border: #BDBDBD 1px solid;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; /* future proofing */
+    -khtml-border-radius: 6px; /* for old Konqueror browsers */
+}
+
+#sidebar-container .expand-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 3%;
+    padding: 5px;
+    background-color: #F6F6F6;
+    font-size: 12px;
+    border: #BDBDBD 1px solid;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; /* future proofing */
+    -khtml-border-radius: 6px; /* for old Konqueror browsers */
+    display: none;
+
+}
+
+#sidebar-left .sidebar-left-context-links-container {
+
+    margin-top: 10px;
+}
+
+#sidebar-left .sidebar-left-context-links-container h2 {
+    padding: 6px 0px 6px 6px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E2E2E2;
+}
+
+#sidebar-left .sidebar-left-context-links-container ul {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+#sidebar-middle-dnl{
+    display:none;
+    border-left: #BDBDBD 1px solid;
+    border-right: #BDBDBD 1px solid;
+    width: 65%;
+    padding: 15px;
+    float: left;
+    background-color: #FFFFFF;
+
+}
+
+#sidebar-middle-dnl .enroll-now-btn-dnt {
+     width:95px;
+    padding: 3px;
+    background-color: #fff;
+    font-size: 10px;
+    border: #BDBDBD 1px solid;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -khtml-border-radius: 6px;
+    text-align:center;
+}
+#sidebar-middle {
+    border-left: #BDBDBD 1px solid;
+    border-right: #BDBDBD 1px solid;
+    width: 65%;
+    padding: 15px;
+    float: left;
+    background-color: #FFFFFF;
+
+}
+
+#sidebar-middle h1 {
+
+}
+#sidebar-middle .middle-left-header{float:left;}
+#sidebar-middle .middle-right-header{float:right;}
+#sidebar-right {
+
+    width: 20%;
+    float: left;
+    background-color: #FFFFFF;
+}
+#sidebar-right .sidebar-right-info p{padding:15px;}
+#sidebar-right .sidebar-right-info h2 {
+    padding: 4px 0px 4px 4px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E2E2E2;
+}
+
+#sidebar-right .sidebar-right-info ul {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+#sidebar-right .sidebar-right-info-left {
+    padding: 10px;
+    float: left;
+}
+
+#sidebar-right .sidebar-right-info-right {
+    float: right;
+    padding: 10px;
+}
+
+#sidebar-right .sidebar-right-header {
+    position: relative;
+}
+
+#sidebar-right .sidebar-right-info-right .enroll-now-btn {
+
+    padding: 5px;
+    background-color: #F6F6F6;
+    font-size: 12px;
+    border: #E2E2E2 1px solid;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -khtml-border-radius: 6px;
+}
+
+#sidebar-right-bottom {
+display:none;
+    width: 20%;
+    float: left;
+    background-color: #FFFFFF;
+}
+#sidebar-right-bottom .sidebar-right-info p{padding:15px;}
+#sidebar-right-bottom .sidebar-right-info h2 {
+    padding: 4px 0px 4px 4px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E2E2E2;
+}
+
+#sidebar-right-bottom .sidebar-right-info ul {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+#sidebar-right-bottom .sidebar-right-info-left {
+    padding: 10px;
+    float: left;
+}
+
+#sidebar-right-bottom .sidebar-right-info-right {
+    float: right;
+    padding: 10px;
+}
+
+#sidebar-right-bottom .sidebar-right-header {
+    position: relative;
+}
+
+#sidebar-right-bottom .sidebar-right-info-right .enroll-now-btn {
+
+    padding: 5px;
+    background-color: #F6F6F6;
+    font-size: 12px;
+    border: #E2E2E2 1px solid;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -khtml-border-radius: 6px;
+}
+.clearfix {
+    clear: both;
+}
+
+.center{text-align:center}
+.see-all-courses a {
+    color: inherit;
+    margin-bottom: 10px;
+}
+.bold{font-weight:bold;}
+
+a img {
+    border: 0;
+}
+ div.product .woocommerce-tabs ul.tabs:before, .woocommerce-page div.product .woocommerce-tabs ul.tabs:before, .woocommerce #content div.product .woocommerce-tabs ul.tabs:before, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs:before, .woocommerce div.product .woocommerce-tabs ul.tabs li, .woocommerce-page div.product .woocommerce-tabs ul.tabs li, .woocommerce #content div.product .woocommerce-tabs ul.tabs li, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li, .woocommerce table.shop_attributes .alt td, .woocommerce table.shop_attributes .alt th, .woocommerce-page table.shop_attributes .alt td, .woocommerce-page table.shop_attributes .alt th, .woocommerce table.shop_attributes td, .woocommerce-page table.shop_attributes td, .woocommerce table.shop_attributes th, .woocommerce-page table.shop_attributes th, .woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page #content .quantity input.qty, .woocommerce #reviews #comments ol.commentlist li img.avatar, .woocommerce-page #reviews #comments ol.commentlist li img.avatar, .woocommerce table.cart td.actions .coupon .input-text, .woocommerce-page table.cart td.actions .coupon .input-text, .woocommerce #content table.cart td.actions .coupon .input-text, .woocommerce-page #content table.cart td.actions .coupon .input-text, .chzn-container-single .chzn-single, .chzn-container-single .chzn-search input, .chzn-container-single .chzn-single:hover, .chzn-container .chzn-drop, .chzn-container-active .chzn-single-with-drop {
+    border-color: #ECF0F1 !important;
+}
+.quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page #content .quantity input.qty {
+    border: 1px solid #ECF0F1 !important;
+}
+ .quantity input.qty, .woocommerce .quantity input.qty, .woocommerce-page #content .quantity input.qty, .woocommerce-page .quantity input.qty {
+    width: 40px;
+    height: 28px;
+    float: left;
+    padding: 0px;
+    text-align: center;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid none solid solid;
+    border-color: #C8BFC6 -moz-use-text-color #C8BFC6 #C8BFC6;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-radius: 2px 0px 0px 2px;
+    box-shadow: 0px 0px 2px 0px #F7F6F7 inset;
+    font-weight: 700;
+    -moz-appearance: textfield;
+}

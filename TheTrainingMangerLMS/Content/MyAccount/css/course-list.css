@@ -1,0 +1,72 @@
+#ttp-lms-sidebar {
+	float: left;
+	width: 225px;
+}
+#ttp-lms-cl-content {
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+#ttp-lms-cl-content > .tc-header {
+	display: inline-block;
+	width: 100%;
+}
+#ttp-lms-cl-content .tc-header-title {
+	float: left;
+	padding: 10px 20px;
+}
+#ttp-lms-cl-content .tc-header-title span {
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+}
+#ttp-lms-cl-content .tc-header-button {
+	float: right;
+	padding: 10px 20px;
+}
+.sidebar-content {
+	border: 2px solid gray;
+	background-color: whitesmoke;
+}
+.sidebar-content .sidebar-header:not(:first-child) {
+	border-top: 2px solid gray;	
+}
+.sidebar-header {
+	font-size: 20px;
+	padding: 0.25em 0.15em;
+	border-bottom: 2px solid gray;
+	background-color: lightgray;
+}
+.sidebar-item {
+	font-size: 18px;
+	padding-left: 0.8em;
+	padding-top: 0.35em;
+	padding-bottom: 0.35em;
+}
+.sidebar-items {
+	padding: 0.25em;
+}
+.filterable-items {
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+.filterable-item {
+	padding-top: 0.05em;
+	padding-bottom: 0.05em;
+}
+table.dataTable tbody td.completed,
+table.dataTable tbody td.upcoming {
+	text-align: right;
+	padding-right: 2.2em;
+}
+table.dataTable tbody td.featured,
+table.dataTable tbody td.status {
+	text-align: center;
+}
+table.dataTable tbody td span.title {
+	font-size: 18px;
+	color: #444;
+}
