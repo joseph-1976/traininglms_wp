@@ -55,7 +55,6 @@ It may also be necessary to sanitize and validate requests before WordPress has 
 
 ##Ajax
 Marshalling of methods defined by a specific namespace.  Wrapped environment, returns http status codes indicative of the underlying error, exceptions get their own custom code.  Works extremely well for client side user notification.
-##Client Side Templating?
-##jQuery UI?
+
 
 
