@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
 * Main WP_DB_Object Class
 * PHP has some erroneous warnings and notices for four of the class functions; will need to suppress them
 */
@@ -35,7 +35,7 @@ protected $updates_cache;
 	}
 
 
-/*
+/**
 * Constructor/instance methods
 */
 	private function __construct(\WP_Post $wp_post) {
@@ -53,7 +53,7 @@ protected $updates_cache;
 		}
 	}
 	
-/*
+/**
 * Function to create new instance
 * @retun object
 * @param int $post_id the post id.
@@ -71,7 +71,7 @@ protected $updates_cache;
 		return new $objectType($wp_post);
 	}
 	
-/*
+/**
 * Function to create new post
 * @retun object
 * @param array $parameters post params.
@@ -127,7 +127,7 @@ protected $updates_cache;
 	}
 	
 
-/*
+/**
 * Function to delete post
 * @param int $post_id post id.
 */
@@ -142,7 +142,7 @@ protected $updates_cache;
 		$objectType::__delete($post_id);
 	}
 	
-/*
+/**
 * Function to delete post meta fields
 * @param int $post_id post id
 */
@@ -166,7 +166,7 @@ protected $updates_cache;
 			throw new \RuntimeException("Unable to delete post of ID {$post_id}.");
 	}
 
-/*
+/**
 * Function to update
 * @param array $parameters array paramas.
 */
@@ -210,7 +210,7 @@ protected $updates_cache;
 		$this->updates_cache = array();
 	}
 
-/*
+/**
 * Function to get the current key
 * @retun int
 * @param array $key key.
@@ -222,7 +222,7 @@ protected $updates_cache;
 		// if ($this->options['cache'] == false) return get_post_meta( $this->id, ttp_lms_prefix('lesson' . $key), true) else ...
 		return $this->cache[$key];
 	}
-/*
+/**
 * Function to get set key
 * @param int $key key.
 * @param int $value value.
@@ -245,7 +245,7 @@ protected $updates_cache;
 		$this->persist( $key, $value );
 	}
 
-/*
+/**
 * Function to create persist in the field descriptor
 * @param int $key key.
 * @param int $value value.
@@ -267,7 +267,7 @@ protected $updates_cache;
 		do_action('update_object_' . static::getPostObjectType($this->id), $this, array( $key => $value ));
 	}
 
-/*
+/**
 * Function make to string
 * @param int $value post params.
 */
@@ -312,7 +312,7 @@ protected $updates_cache;
 		update(remaining)*/
 	}
 
-/*
+/**
 * Function main call
 * @retun 
 * @param string $method method to call.
