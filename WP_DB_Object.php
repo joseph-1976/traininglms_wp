@@ -52,6 +52,13 @@ protected $updates_cache;
 			}
 		}
 	}
+	
+/*
+* Function to create new instance
+* @retun object
+* @param int $post_id the post id.
+* @param array $options array.
+*/
 	public static function instance( $post_id, $options = array() ) {
 		// TODO: Use a global Registry to store loaded instances
 		// is an instance of this already loaded, then return it
@@ -63,6 +70,13 @@ protected $updates_cache;
 		$objectType = static::getPostObjectType($post_id);
 		return new $objectType($wp_post);
 	}
+	
+/*
+* Function to create new post
+* @retun object
+* @param array $parameters post params.
+* @param array $options array.
+*/
 	public static function create( $parameters, $options = array() ) {
 		$post = array( 'post_type' => static::getPostType());
 		$fields = static::getFieldsDescriptor();
@@ -111,14 +125,12 @@ protected $updates_cache;
 		do_action('create_object_' . static::getPostObjectType($post_id), $object);
 		return $object;
 	}
-	/* TODO: public static function duplicate(WP_DB_Object $object, $options = array() ) {
-	// cache is available for a Course that is passed in
-	// need to decide if clone should be static, use course_id, otherwise $this
-	// $course = static::instance( $course_id )
-	// return static::create($object->cache, $options)
-	}*/
-	// TODO: public static function delete($course_id) or public function delete();
-	// delete will be called in the UI, so we also need a function to delete post_meta, similar to what we have with User
+	
+
+/*
+* Function to delete post
+* @param int $post_id post id.
+*/
 	public static function delete($post_id) {
 		// validate post_id and posttype
 		$wp_post = get_post( $post_id );
@@ -129,6 +141,11 @@ protected $updates_cache;
 		$objectType = static::getPostObjectType($post_id);
 		$objectType::__delete($post_id);
 	}
+	
+/*
+* Function to delete post meta fields
+* @param int $post_id post id
+*/
 	protected static function __delete( $post_id ) {
 		// delete post_meta fields
 		$fields = static::getFieldsDescriptor();
@@ -149,6 +166,10 @@ protected $updates_cache;
 			throw new \RuntimeException("Unable to delete post of ID {$post_id}.");
 	}
 
+/*
+* Function to update
+* @param array $parameters array paramas.
+*/
 	public function update($parameters = array()) {
 		if (count(array_keys($parameters)) == 0) {
 			if (!$this->__options['cache_updates'] || (count(array_keys($this->updates_cache)) == 0)) return;
@@ -189,6 +210,11 @@ protected $updates_cache;
 		$this->updates_cache = array();
 	}
 
+/*
+* Function to get the current key
+* @retun int
+* @param array $key key.
+*/
 	public function __get( $key ) {
 		if (!array_key_exists($key, $this->cache)) {
 			trigger_error("Field $key does not exist for this class", E_USER_ERROR);
@@ -196,7 +222,11 @@ protected $updates_cache;
 		// if ($this->options['cache'] == false) return get_post_meta( $this->id, ttp_lms_prefix('lesson' . $key), true) else ...
 		return $this->cache[$key];
 	}
-
+/*
+* Function to get set key
+* @param int $key key.
+* @param int $value value.
+*/
 	public function __set( $key, $value ) {
 		if (!array_key_exists($key, $this->cache)) { // use descriptor and some fields may only be accesible through class methods
 			trigger_error("Field $key does not exist for this class", E_USER_ERROR);
@@ -215,6 +245,11 @@ protected $updates_cache;
 		$this->persist( $key, $value );
 	}
 
+/*
+* Function to create persist in the field descriptor
+* @param int $key key.
+* @param int $value value.
+*/
 	private function persist( $key, $value ) {
 		$this->cache[$key] = $value;
 
@@ -232,6 +267,10 @@ protected $updates_cache;
 		do_action('update_object_' . static::getPostObjectType($this->id), $this, array( $key => $value ));
 	}
 
+/*
+* Function make to string
+* @param int $value post params.
+*/
 	private static function to_string($value) {
 		if (is_numeric($value)) {
 			return (string)$value;
@@ -273,7 +312,12 @@ protected $updates_cache;
 		update(remaining)*/
 	}
 
- //Needs 'restrict'ions on 'get' and 'set'
+/*
+* Function main call
+* @retun 
+* @param string $method method to call.
+* @param array $args array.
+*/
 	public function __call($method, $args) {
 		$prefix = substr($method, 0, 3);
 		if (($prefix == 'get') || ($prefix == 'set')) {
