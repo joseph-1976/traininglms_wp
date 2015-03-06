@@ -1,6 +1,9 @@
 <?php
 
-// PHP has some erroneous warnings and notices for four of the class functions; will need to suppress them
+/*
+* Main WP_DB_Object Class
+* PHP has some erroneous warnings and notices for four of the class functions; will need to suppress them
+*/
 abstract class WP_DB_Object implements Serializable {
 // Post id
 protected $id;
@@ -31,8 +34,9 @@ protected $updates_cache;
 		delete_post_meta($post_id, static::prefix('type'));
 	}
 
+
 /*
-	Constructor/instance methods
+* Constructor/instance methods
 */
 	private function __construct(\WP_Post $wp_post) {
 		$this->id = $wp_post->ID;
@@ -269,7 +273,7 @@ protected $updates_cache;
 		update(remaining)*/
 	}
 
-/* Needs 'restrict'ions on 'get' and 'set'
+ //Needs 'restrict'ions on 'get' and 'set'
 	public function __call($method, $args) {
 		$prefix = substr($method, 0, 3);
 		if (($prefix == 'get') || ($prefix == 'set')) {
@@ -291,7 +295,7 @@ protected $updates_cache;
 			}
 		}
 		trigger_error("Class " . get_class($this) . " has no method {$method}.", E_USER_ERROR);
-	}*/
+	}
 
 	/**
 		Accessor methods
